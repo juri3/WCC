@@ -13,16 +13,15 @@
 	<mvc:annotation-driven/>
 	
 	<context:component-scan base-package="controller, service"/>
-	
+
 	<mvc:default-servlet-handler/>
 	<!-- 컨트롤러 타지 않고 바로 리턴하는것  -->
 	
 	<mvc:annotation-driven/>
 	<!-- 컨트롤러에서 어노테이션 로딩하겠다 얘기 -->
 	
-	<mvc:view-controller path="/" view-name="index"/>
-	
 
+	<mvc:view-controller path="/main" view-name="main"/>
 	
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/view/"/>
@@ -42,5 +41,11 @@
 			<value>Oracle</value>
 		</constructor-arg>
 	</bean> -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql://localhost:5432/WCC" />
+        <property name="username" value="postgresql" />
+        <property name="password" value="1234" />
+    </bean>
 	
 </beans>

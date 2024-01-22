@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -71,7 +73,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="index" class="app-brand-link">
+            <a href="<%=request.getContextPath()%>/main" class="app-brand-link">
               <span class="app-brand-text demo menu-text fw-bolder">WCC Admin</span>
             </a>
 
@@ -85,7 +87,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item active">
-              <a href="index.html" class="menu-link">
+              <a href="<%=request.getContextPath()%>/main" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -101,12 +103,12 @@
               </a>				
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
+                  <a href="<%=request.getContextPath()%>/menu/list" class="menu-link">
                     <div data-i18n="Without menu">List</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
+                  <a href="<%=request.getContextPath()%>/menu/add" class="menu-link">
                     <div data-i18n="Without navbar">add List</div>
                   </a>
                 </li>
@@ -119,16 +121,16 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Patient</div>
+                <div data-i18n="Account Settings">Patients</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
+                  <a href="<%=request.getContextPath()%>/patients/list" class="menu-link">
                     <div data-i18n="Account">List</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="pages-account-settings-notifications.html" class="menu-link">
+                  <a href="<%=request.getContextPath()%>/patients/add" class="menu-link">
                     <div data-i18n="Notifications">add List</div>
                   </a>
                 </li>
@@ -144,24 +146,16 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="ui-accordion.html" class="menu-link">
+                  <a href="<%=request.getContextPath()%>/orders/list" class="menu-link">
                     <div data-i18n="Accordion">List</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="ui-alerts.html" class="menu-link">
+                  <a href="<%=request.getContextPath()%>/orders/add" class="menu-link">
                     <div data-i18n="Alerts">add List</div>
                   </a>
                 </li>
               </ul>
-            </li>
-
-            <!--------------- Tables ---------------->
-            <li class="menu-item">
-              <a href="tables-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-table"></i>
-                <div data-i18n="Tables">Tables</div>
-              </a>
             </li>
           </ul>
         </aside>
@@ -187,7 +181,7 @@
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
+                    <div class="avatar">
                       <img src="./assets/img/avatars/profile.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
@@ -517,38 +511,7 @@
             </div>
             <!-- / Content -->
 
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-                </div>
-                <div>
-                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-                  <a
-                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Documentation</a
-                  >
-
-                  <a
-                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                    target="_blank"
-                    class="footer-link me-4"
-                    >Support</a
-                  >
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
+          
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -562,17 +525,9 @@
     </div>
     <!-- / Layout wrapper -->
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
 
     <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
+    <!-- build:js ./assets/vendor/js/core.js -->
     <script src="./assets/vendor/libs/jquery/jquery.js"></script>
     <script src="./assets/vendor/libs/popper/popper.js"></script>
     <script src="./assets/vendor/js/bootstrap.js"></script>
